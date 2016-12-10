@@ -77,3 +77,18 @@ function myFunction() {
         }
     }
 }
+
+
+var movielist= new Array();
+var count=0;
+
+function call(){
+      d3.csv("test.csv",function(data){
+        for (var i = 0; i <count; i++) {
+          if(data!=movielist[i])
+          movielist.push(data);
+        }
+        })
+      for (var i = 0; i <count; i++) {
+  console.log(movielist)
+}         

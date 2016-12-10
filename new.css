@@ -176,5 +176,5 @@ body {
     }
   }
   .left{
-    margin-top: 11px;
+    position: relative;
   }
