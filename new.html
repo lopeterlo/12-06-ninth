@@ -12,6 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://d3js.org/d3.v3.min.js"></script>
+
   
 
 </head>
@@ -38,22 +39,83 @@
   </div>
 </nav>
 
-<div class="jumbotron text-center">
-  <h1>Movies</h1> 
+
+
+
+
+
+ 
   <p>search for your movie</p> 
-  <form>
-    <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="movie" required>
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">search</button>
-      </div>
-    </div>
-  </form>
+  <div class="w3-container" style="margin-top:50px">
+
+  <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="search()">
+  <ul class="w3-ul w3-margin-top" id="myUL">
+    <li><a href="">你的名字</a></li>
+    <li><a href="">怪獸與他們的產地</a></li>
+    <li><a href="">奇異博士</a>></li>
+    
+  </ul>
 </div>
+
+<script>
+function applepie()
+  { 
+  var title = "怪獸與他們的產地"
+  var width = 800, height = 800; 
+  var svg = d3.select("body").append("svg")
+              .attr("width", width)
+              .attr("height", height)
+              .append("g")
+          .attr("transform", "translate(150,150)");
+  var color = d3.scale.category20();
+  d3.csv("https://small00blue.github.io/test1/mtest.csv",piechart);
+
+  function piechart(data)
+    {
+    var arc = d3.svg.arc()
+            .outerRadius(120)
+              .innerRadius(50);
+      var pie = d3.layout.pie()
+            .sort(null) 
+            .value(function(d) {return d[title]});    
+    var g1 = svg.selectAll("g")
+           .data(pie(data))
+           .enter()
+           .append("g");
+        g1 .append("path")
+             .attr("d", arc)
+             .style("fill", function(d,i) { 
+                return color(i) });
+    }
+  }
+
+function search() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+      <div class="input-group-btn" >
+        <button type="button" class="btn btn-danger" style="margin-left:550px">search</button>
+      </div>
+   
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid text-center">
   <div class="row">
+  
     
       <h1>About our websites</h1>
       <h4></h4><br>
@@ -69,6 +131,7 @@
 <!-- Container (Services Section) -->
 <div id="services" class="container-fluid text-center">
   <h1>Analysis</h1>
+  
   <h4></h4>
   <br>
   <br>
@@ -102,7 +165,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-      <img src="http://1img.mgtv.com/preview/internettv/sp_images/ott/2016/dongman/292476/20160411105438321-new.jpg" class="img-circle"  width="500" height="400" style="margin-left: 350px">
+      <img src="http://1img.mgtv.com/preview/internettv/sp_images/ott/2016/dongman/292476/20160411105438321-new.jpg" class="img-circle"  width="500" height="400" style="margin-left: 300px">
         
   <br>
       </div>
