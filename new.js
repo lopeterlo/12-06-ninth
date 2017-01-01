@@ -63,19 +63,23 @@ $(document).ready(function(){
     });
   });
 })
-function myFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
+function search() {
+    var input=0, filter, ul, li, a, i;
+    input = document.getElementById("myInput"); 
+    
     filter = input.value.toUpperCase();
-    div = document.getElementById("myDIV");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+
+    for (i = 0; i < li.length; i++) {
+        if (li[i].innerHTML.toUpperCase().indexOf(filter) > 0 ) {
+          $('#myUL').show();
+            li[i].style.display = "";
         } else {
-            a[i].style.display = "none";
+            li[i].style.display = "none";
         }
     }
+ 
 }
 
 
