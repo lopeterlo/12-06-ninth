@@ -12,7 +12,7 @@
   <link href="https://lopeterlo.github.io/12-06-ninth/new.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
   <script async src="https://lopeterlo.github.io/12-06-ninth/new.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -489,6 +489,7 @@ function applepie(title)
                   .append("g")
             .attr("transform", "translate(400,170)");
   var color = d3.scale.category20();
+  console.log("sassssss");
   d3.csv("https://small00blue.github.io/test1/mtest.csv", piechart); //這樣寫以後可以加很多其他函式
   
   function piechart(data){
