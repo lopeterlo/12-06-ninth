@@ -480,26 +480,29 @@ function search() {
 <div id="Analysis" class="container-fluid text-center ">
   <h1>Analysis</h1>
   <h1 id="moviename">   </h1>
+  <div id="chart"></div>
+<div id="frequency"></div>
+<div id="imdb"></div>
 
-
-  
   <script type="text/javascript">
   
 function applepie(title)
   { d3.select("svg").remove();
-  document.getElementById("myUL").style="display:none";
 // title放使用者輸入的電影名稱
-  document.getElementById("moviename").innerHTML="PTT "+title;
-  var width = 800, height = 450; 
-  var svg = d3.select("#Analysis").append("svg")
+  document.getElementById("moviename").innerHTML=title;
+  document.getElementById("frequency").innerHTML = "Popularity in PTT MOVIES"+"";
+  document.getElementById("imdb").innerHTML = "IMDb Rating"+"";
+  document.getElementById("myUL").style="display:none";
+  document.getElementById("imdb").style="font-size:30px";
+  document.getElementById("frequency").style="font-size:30px ";
+  var width = 800, height = 350; 
+  var svg = d3.select("#chart").append("svg")
                   .attr("width", width)
                   .attr("height", height)
                   .append("g")
             .attr("transform", "translate(400,170)");
   var color = d3.scale.category20();
-  console.log("sassssss");
   d3.csv("https://small00blue.github.io/test1/mtest.csv", piechart); //這樣寫以後可以加很多其他函式
-  
   function piechart(data){
     var arc = d3.svg.arc()
                     .outerRadius(150)
@@ -538,18 +541,49 @@ function applepie(title)
           )
            .attr("text-anchor", "middle")
              .text(function(d){
-              console.log(d)
-              return title ; //在每個形狀的中央插入文字
+              return "PTT 好負雷比" ; //在每個形狀的中央插入文字
           })
           .attr("fill", "black"); 
 
       }
     
+  d3.csv("https://ndshen.github.io/test/project/popularity3.csv", popular);
+  function popular(data){   
+    d3.select("#frequency").selectAll("div")
+      .data(data)
+      .enter()
+      .append("h2")
+      .text(function(d){return d[title];})
+      .style({
+        'color':function(d){
+            return color(d[title]);
+        }
+    });
   }
-    
+  d3.csv("https://ndshen.github.io/test/project/rating3.csv", imdb);
+  function imdb (data){
+    d3.select("#imdb").selectAll("div")
+      .data(data)
+      .enter()
+      .append("h2")
+      .text(function(d){return d[title];})
+      .style({
+        'color':function(d){
+            return color(d[title]);
+        },
+        'width':function(d){
+            return d[title]*10+'px'
+        },
+        'margin':'2px 0',
+        'background':'white',
+        'margin-left':'46%'
+    });
+  }
+}
   </script>
 
- 
+  
+
 
 
 </div>
