@@ -464,12 +464,12 @@ function search() {
       
 
 <!-- Container (About Section) -->
-<div id="about" class="container-fluid text-center">
+<div id="about" class="container-fluid text-center" >
   <div class="row">
       <h1>About our websites</h1>
       <h2>  </h2>
-      <h4>我們是數位應用程式設計的第九組，我們利用R程式語言統整了PTT movie板和國外知名電影 </h4>
-      <h4>影評網站IMDb中的資料，並且利用搜尋功能，讓使用者能了解電影在國內外的評價。</h4>
+      <h4 style="margin-top: 15px">我們是數位應用程式設計的第九組，我們利用R程式語言統整了PTT movie板和 </h4>
+      <h4>國外知名電影影評網站IMDb中的資料，並且利用搜尋功能，讓使用者能了解電影在國內外的評價。</h4>
     </div>
   </div>
 </div>
@@ -477,30 +477,36 @@ function search() {
 
 
 <!-- Container (Analysis Section) -->
-<div id="Analysis" class="container-fluid text-center ">
+<div id="Analysis" class="container-fluid text-center " style="margin-top: -100px">
   <h1>Analysis</h1>
   <h1 id="moviename">   </h1>
-  <div id="chart"></div>
-<div id="frequency"></div>
-<div id="imdb"></div>
+  <div> 
+   <div id="chart"></div>
+   <div id="imdb" ></div>
+   <div id="frequency"></div>
+   
+   </div>
+ 
 
   <script type="text/javascript">
   
 function applepie(title)
   { d3.select("svg").remove();
+  d3.select("h2").remove();
+  d3.select("h2").remove();
 // title放使用者輸入的電影名稱
   document.getElementById("moviename").innerHTML=title;
-  document.getElementById("frequency").innerHTML = "Popularity in PTT MOVIES"+"";
-  document.getElementById("imdb").innerHTML = "IMDb Rating"+"";
   document.getElementById("myUL").style="display:none";
   document.getElementById("imdb").style="font-size:30px";
   document.getElementById("frequency").style="font-size:30px ";
+  
+  document.getElementById("imdb").style="margin-top:-250px";
   var width = 800, height = 350; 
   var svg = d3.select("#chart").append("svg")
                   .attr("width", width)
                   .attr("height", height)
                   .append("g")
-            .attr("transform", "translate(400,170)");
+            .attr("transform", "translate(200,170)");
   var color = d3.scale.category20();
   d3.csv("https://small00blue.github.io/test1/mtest.csv", piechart); //這樣寫以後可以加很多其他函式
   function piechart(data){
@@ -553,11 +559,12 @@ function applepie(title)
       .data(data)
       .enter()
       .append("h2")
-      .text(function(d){return d[title];})
+      .text(function(d){return "Popularity in PTTMOVIEs: "+d[title];})
       .style({
         'color':function(d){
             return color(d[title]);
-        }
+        },
+        'margin-left':'400px',
     });
   }
   d3.csv("https://ndshen.github.io/test/project/rating3.csv", imdb);
@@ -566,17 +573,17 @@ function applepie(title)
       .data(data)
       .enter()
       .append("h2")
-      .text(function(d){return d[title];})
+      .text(function(d){return "IMDb Rating: "+d[title];})
       .style({
         'color':function(d){
             return color(d[title]);
         },
-        'width':function(d){
-            return d[title]*10+'px'
-        },
+        
         'margin':'2px 0',
         'background':'white',
-        'margin-left':'46%'
+        'margin-left':'300px',
+       
+        
     });
   }
 }
@@ -590,8 +597,8 @@ function applepie(title)
 
 
 
-  <h1 class="text-center">Popular movies</h1>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+  <h1 class="text-center" style=" margin-top: 100px">Popular movies</h1>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" >
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -638,7 +645,7 @@ function applepie(title)
 
 
 <!-- Container (websites Section) -->
-<div id="websites" class="container-fluid text-center bg-grey">
+<div id="websites" class="container-fluid text-center bg-grey" style="margin-top: -50px">
   <h1>Related Website</h1><br>
   <h4></h4>
   <div class="row text-center slideanim">
@@ -674,7 +681,7 @@ function applepie(title)
 
 
 <!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid">
+<div id="pricing" class="container-fluid" style="margin-top: -100px">
   <div class="text-center">
     <h1>Members</h1>
     <h4>-five members in ninth gruop</h4>
@@ -783,7 +790,7 @@ function applepie(title)
   </div>
   
 <!-- Container (Contact Section) -->
-<div id = "video" class="container-fluid">
+<div id = "video" class="container-fluid" style="margin-top: -130px">
 <h1><strong>  Video</strong></h1>
 <h3>Our video for crawling with R</h3>
  <iframe width="560" height="315" src="https://www.youtube.com/embed/4MiD_DPW5N4" frameborder="0" allowfullscreen></iframe>
