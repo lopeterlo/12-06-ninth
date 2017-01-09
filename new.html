@@ -58,19 +58,7 @@
   <div class="w3-container" style="margin-top:50px">
   <h3>空白鍵查看所有電影</h3>
   
-<div>
-  <script>
-    d3.csv("https://ndshen.github.io/test/project/cloud2.csv", 
-      function(data)
-      {
-        d3.wordcloud()
-          .size([800, 500])
-          .fill(d3.scale.ordinal().range(["#884400", "#448800", "#888800", "#444400"]))
-          .words(data)
-          .start();
-      });
-    </script>
-</div>
+
 
   <input class="w3-input w3-border " type="text" placeholder="Search for names.." id="myInput" onkeyup="search()">
 
@@ -134,7 +122,18 @@ function search() {
    <div id="chart"></div>
    <div id="imdb" ></div>
    <div id="frequency"></div>
-   
+   <script>
+    d3.csv("https://ndshen.github.io/test/project/cloud2.csv", 
+      function(data)
+      {
+        
+        d3.wordcloud()
+          .size([800, 500])
+          .fill(d3.scale.ordinal().range(["#884400", "#448800", "#888800", "#444400"]))
+          .words(data)
+          .start();
+      });
+    </script>
    </div>
  
 
