@@ -17,7 +17,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://pecu.github.io/D3/wc/d3.js" charset="utf-8"></script>
   <script src="https://pecu.github.io/D3/wc/d3.layout.cloud.js"></script>
-  <script src="https://pecu.github.io/D3/wc/d3.wordcloud.js"></script>
+  <script src="https://ndshen.github.io/test/project/cloudJS.js"></script>
 
 
   
@@ -115,25 +115,29 @@ function search() {
 
 
 <!-- Container (Analysis Section) -->
-<div id="Analysis" class="container-fluid text-center " style="margin-top: -50px">
+<div id="Analysis" class="container-fluid text-center " style="margin-top: -10px">
   <h1>Analysis</h1>
   <h1 id="moviename">   </h1>
   <div> 
    <div id="chart"></div>
    <div id="imdb" ></div>
    <div id="frequency"></div>
-   <script>
+
+  <div id ="wordcloud">
+  <script>
+
     d3.csv("https://ndshen.github.io/test/project/cloud2.csv", 
       function(data)
       {
         
         d3.wordcloud()
-          .size([800, 500])
+          .size([800, 600])
           .fill(d3.scale.ordinal().range(["#884400", "#448800", "#888800", "#444400"]))
           .words(data)
           .start();
       });
-    </script>
+    </script></div>
+   
    </div>
  
 
@@ -482,11 +486,13 @@ function applepie(title)
         </div>
         <div class="panel-body">
           
-          <a href="https://www.facebook.com/groups/283207588460616/?fref=ts"><img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t31.0-8/14444847_10206852207530483_8152740340572100975_o.jpg?oh=50d70ff1c7b409f17bf40d4ccab6b9cf&oe=591630FC" width="250" height="320" class="w3-hover-opacity"></a>
-
-      
         </div>
         <div class="panel-footer">
+          
+          <a href="https://www.facebook.com/groups/283207588460616/?fref=ts"><img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t31.0-8/14444847_10206852207530483_8152740340572100975_o.jpg?oh=50d70ff1c7b409f17bf40d4ccab6b9cf&oe=591630FC" style="width:250px"></a>
+
+      
+        
  
           
         </div>
