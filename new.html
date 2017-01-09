@@ -72,9 +72,11 @@
       .data(data)
       .enter()
       .append("li")
+      .attr("class","w3-hover-gray")
       .append("a")
       .attr("href","#Analysis")
       .attr("onclick","applepie(this.innerText)")
+
       .text(function(d){return d["movieTitle"];});
   }
   </script>
