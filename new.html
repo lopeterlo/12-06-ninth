@@ -41,8 +41,9 @@
         <li><a href="#Analysis">MOVIES</a></li>
         <li><a href="#websites">WEBSITES</a></li>
         <li><a href="#pricing">MEMBERS</a></li>
-               <li><a href="#about">ABOUT US</a></li>
-        <li><a href="#video">VIDEO</a></li>
+        <li><a href="#video">VIDEO</a></li>      
+         <li><a href="#about">ABOUT US</a></li>
+        
       </ul>
     </div>
   </div>
@@ -117,8 +118,10 @@ function search() {
 <!-- Container (Analysis Section) -->
 <div id="Analysis" class="container-fluid text-center " style="margin-top: -10px">
   <h1>Analysis</h1>
-  <h1 id="moviename">   </h1>
+  <h1 id="moviename">
+     </h1>
   <div> 
+  <div id="english"></div>
    <div id="chart"></div>
    <div id="imdb" ></div>
    <div id="frequency"></div>
@@ -147,6 +150,7 @@ function applepie(title)
   { d3.select("svg").remove();
   d3.select("h2").remove();
   d3.select("h2").remove();
+   d3.select("h2").remove();
 // title放使用者輸入的電影名稱
   document.getElementById("moviename").innerHTML=title;
   document.getElementById("myUL").style="display:none";
@@ -237,6 +241,18 @@ function applepie(title)
         'margin-left':'300px',
        
         
+    });
+  }
+  d3.csv("https://ndshen.github.io/test/project/englishName2.csv", english);
+  function english(data){   
+    d3.select("#english").selectAll("div")
+      .data(data)
+      .enter()
+      .append("h2")
+      .text(function(d){return d[title];})
+      .style({
+        'font-size':'25px',
+      
     });
   }
 }
@@ -507,14 +523,6 @@ function applepie(title)
 
 
 
-<div id="about" class="container-fluid text-center" style="margin-top: -100px" >
-  <div class="row">
-      <h1>About our websites</h1>
-      <h2>  </h2>
-      <h4 style="margin-top: 15px">我們是數位應用程式設計的第九組，我們利用R程式語言統整了PTT movie板和   </h4>
-      <h4>國外知名電影影評網站IMDb中的資料，並且利用搜尋功能，讓使用者能了解電影在國內外的評價。        
-    </div>
-  </div>
 
 
 
@@ -527,6 +535,16 @@ function applepie(title)
  <iframe width="560" height="315" src="https://www.youtube.com/embed/4MiD_DPW5N4" frameborder="0" allowfullscreen></iframe>
 
 </div>
+
+<div id="about" class="container-fluid text-center" style="margin-top: -100px" >
+  <div class="row">
+      <h1>About our websites</h1>
+      <h2>  </h2>
+      <h4 style="margin-top: 15px">我們是數位應用程式設計的第九組，我們利用R程式語言統整了PTT movie板和   </h4>
+      <h4>國外知名電影影評網站IMDb中的資料，並且利用搜尋功能，讓使用者能了解電影在國內外的評價。        
+    </div>
+  </div>
+
 </div>
 </body>
 </html>
