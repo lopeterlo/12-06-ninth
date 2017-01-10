@@ -64,8 +64,7 @@
   
 
 
-  <input class="w3-input w3-border " type="text" placeholder="Search for names.." id="myInput" onkeyup="search()">
-
+  <input class="w3-input w3-border " type="text" placeholder="Search for names.." id="myInput" onkeyup="search()" onkeypress="if (window.event.keyCode==13) return applepie(this.value)">
   <h7>熱門電影：<a href="#Analysis" onclick="applepie(this.innerText)">丹麥女孩</a>、<a href="#Analysis" onclick="applepie(this.innerText)">神鬼獵人</a>、<a href="#Analysis" onclick="applepie(this.innerText)">惡棍英雄:死侍</a>、<a href="#Analysis" onclick="applepie(this.innerText)">出神入化2</a>、<a href="#Analysis" onclick="applepie(this.innerText)">寒戰2</a>、<a href="#Analysis" onclick="applepie(this.innerText)">奇異博士</a> ...</h7>
   <ul class="w3-ul w3-margin-top " id="myUL" style="display:none" >
 <script type="text/javascript">
@@ -122,9 +121,9 @@ function search() {
 <!-- Container (Analysis Section) -->
 <div id="Analysis" class="container-fluid text-center " style="margin-top: -10px">
   <h1>Analysis</h1>
-  <h1 id="moviename" class="w3-blue-grey w3-text-white"></h1>
+  <h1 id="moviename" class=" w3-text-blue-grey " style="background-color:   #F5F5F5"></h1>
   <div> 
-  <div id="english" class="w3-blue-grey " style="margin-top: -10px"></div>
+  <div id="english" class="" style="margin-top: -10px "></div>
    <div id="chart"></div>
    <div id="imdb" ></div>
    <div id="frequency"></div>
@@ -249,9 +248,10 @@ function applepie(title)
       .enter()
       .append("h2")
       .text(function(d){return d[title];})
-      .attr("class","w3-text-white")
+      .attr("class","w3-text-blue-grey")
       .style({
         'font-size':'25px',
+        'background':'#F5F5F5',
       
     });
   }
