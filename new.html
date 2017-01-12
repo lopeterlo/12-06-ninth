@@ -1,9 +1,17 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Made By www.w3schools.com - No Copyright -->
   <title>Ninth group- Movie reviews analysis</title>
   <meta charset="utf-8">
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
+
+         <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+  <meta charset="utf-8">
+  <link rel="canonical" href="http://www.creative-tim.com"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -19,7 +27,165 @@
   <script src="https://pecu.github.io/D3/wc/d3.layout.cloud.js"></script>
   <script src="https://ndshen.github.io/test/project/cloudJS.js"></script>
 
+        
+       <link href="http://presentation.creative-tim.com/assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="http://presentation.creative-tim.com/assets/css/rubick_pres.css" rel="stylesheet"/>
+        <!--     Fonts and icons     -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+        <link href="http://presentation.creative-tim.com/assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+        <link href="http://presentation.creative-tim.com/assets/css/fonts/Rubik-Fonts.css" rel="stylesheet" />
 
+        <style>
+            .section-header .separator {
+                margin: 0em auto 2em;
+            }
+            .space-50{
+                height: 50px;
+                width: 100%;
+                display: block;
+                content: "";
+            }
+            .section .parallax > img{
+                width: 100%;
+                min-width: 0;
+                min-height: 0;
+            }
+            .pattern-image:after{
+                opacity: .2;
+/*                 background: #111; */
+            }
+            .section-header h1{
+                text-shadow: -2px 2px 30px rgba(0, 0, 0, 0.25), -2px 4px 14px rgba(0, 0, 0, 0.1);
+            }
+            .section-header h5{
+                  text-shadow: 0px 0px 11px rgba(0, 0, 0, 0.3);
+            }
+            .section-header .content{
+                top: 42%;
+            }
+            .section-we-are-1 .title{
+                max-width: 960px;
+            }
+            .card .icon ~ h3{
+                margin-bottom: 10px;
+            }
+            .section-with-hover .project .content{
+                text-align: center;
+            }
+            .section-with-hover .project .over-area{
+                background: rgba(0, 0, 0, .83);
+            }
+            .section-clients-2{
+                padding: 6em 0 1em;
+            }
+            .section-clients-2 .nav-text li {
+                margin: 0 15px 10px 15px;
+            }
+            .section-contact-3 .contact-container .address-container{
+                width: 28%;
+                background-color: #FFFFFF;
+                height: 470px;
+                top: 50px;
+                padding: 20px;
+            }
+            .section-contact-3 .address{
+                margin-top: 40px;
+            }
+            .section-we-made-3 .content{
+                padding: 0 15px;
+                text-align: center;
+            }
+            .section-we-made-3 .over-area .content h3{
+                margin: 5px 0 20px;
+            }
+            .section-we-made-3 .over-area .content p{
+                font-size: .9em;
+                color: #898989;
+            }
+            .section-we-made-3 .over-area .content h5{
+                margin-bottom: 0px;
+                margin-top: 20px;
+            }
+
+            .btn-black{
+                letter-spacing: 1px;
+                margin-top: 20px;
+            }
+
+            .copyright a{
+                color: #FFFFFF;
+            }
+
+            .section-team-2 .team .member p {
+              font-size: .9em;
+              padding: 0 10px;
+            }
+
+            .card{
+                margin-bottom: 30px;
+            }
+            .section-with-hover .project .over-area.over-area-sm .content p {
+              font-size: .85em;
+            }
+            .section-with-hover .project .over-area.over-area-sm .content h4 {
+              font-size: 1.6em;
+            }
+            .logo{
+                display: block;
+                margin: 0 auto 10px;
+                width: 61px;
+                height: 61px;
+                border-radius: 50%;
+                border: 1px solid #333333;
+                overflow: hidden;
+            }
+            .logo img{
+                width: 100%;
+                height: 100%;
+            }
+            .loading .loading-container p {
+                font-size: 30px;
+                width: 220px;
+                margin: 0 auto;
+                margin-bottom: 30px;
+                height: 35px;
+            }
+            .loading .logo{
+                opacity: 0;
+                transition: all 0.9s;
+                -webkit-transition: all 0.9s;
+                -moz-transition: all 0.9s;
+            }
+            .loading .logo.visible{
+                opacity: 1;
+            }
+            .sharrre.btn{
+                color: #444444;
+                border-color: #444444;
+                font-weight: 400;
+            }
+            .address .col-md-6{
+                padding-right: 7px;
+                padding-left: 7px;
+            }
+            a.img-class{
+                opacity: 1;
+            }
+            a.img-class:hover{
+                opacity: .9;
+            }
+
+            .btn-lg{
+                padding: 14px 10px;
+            }
+
+            @media (max-width: 1200px){
+                .section-contact-3 .contact-container .address-container{
+                    height: 520px;
+                }
+            }
+        </style>
   
 
 </head>
@@ -28,7 +194,7 @@
 <table width="80%" style="background-color: white">
 <tr>
 <td>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:grey;">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -36,12 +202,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Ninth group</a>
+      <a class="navbar-brand" href="#myPage">Group Nine</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
  
-        <li><a href="#Analysis">MOVIES</a></li>
+        <li><a href="#Analysis">ANALYSIS</a></li>
         <li><a href="#websites">WEBSITES</a></li>
         <li><a href="#pricing">MEMBERS</a></li>
         <li><a href="#video">VIDEO</a></li>      
@@ -53,18 +219,51 @@
 </nav>
 
 
+<div class="section section-header">
+                <div class="parallax pattern-image">
+                    <img src="http://lakewood.advocatemag.com/wp-content/uploads/2015/01/iStock_000045092280_Large.jpg"/ style="opacity:0.7">
+<!--                     <img src="/assets/img/header6.jpg"/> -->
+                    <div class="container">
+                        <div class="content">
+                            <h1 >Movies</h1>
+                            <div class="separator-container">
+                                <div class="separator line-separator">∎</div>
+                            </div>
+                            <h5>"Every time I go to a movie, it's MAGIC, no matter what the movie's about"--Steven Speilberg</h5>
+                        </div>
+                    </div>
+                </div>
+                <a href="#engine" data-scroll="true" data-id="#whoWeAre" class="scroll-arrow hidden-xs hidden-sm">
+                <i class="fa fa-angle-down" ></i>
+                </a>
+            </div>
+            <!--
+            <div class="section section-we-are-1" id="whoWeAre">
+                <div class="text-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="title" id="animationTest">
+                                <h2>About Creative Tim</h2>
+                                <div class="separator-container">
+                                    <div class="separator line-separator">∎</div>
+                                </div>
+                                <p class="large">
+                                    Creative Tim is a startup that creates design tools that make the web development process faster and easier. We love the web and care deeply for how users interact with a digital product. We power businesses and individuals to create better looking web projects around the world.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          -->
 
-
-
-
- 
-  <p>search for your movie</p> 
-  <div class="w3-container" style="margin-top:50px">
-  <h3>空白鍵查看所有電影</h3>
+ <h3 style="margin-left: 15px"><strong>Search Movies</strong></h3>
+  <div class="w3-container" style="margin-top:-40px">
+  <h3></h3>
   
 
 
-  <input class="w3-input w3-border " type="text" placeholder="Search for names.." id="myInput" onkeyup="search()" onkeypress="if (window.event.keyCode==13) return applepie(this.value)">
+  <input class="w3-input w3-border " type="text" placeholder="空白鍵查看所有電影.." id="myInput" onkeyup="search()" onkeypress="if (window.event.keyCode==13) return applepie(this.value)">
   <h7>熱門電影：<a href="#Analysis" onclick="applepie(this.innerText)">丹麥女孩</a>、<a href="#Analysis" onclick="applepie(this.innerText)">神鬼獵人</a>、<a href="#Analysis" onclick="applepie(this.innerText)">惡棍英雄:死侍</a>、<a href="#Analysis" onclick="applepie(this.innerText)">出神入化2</a>、<a href="#Analysis" onclick="applepie(this.innerText)">寒戰2</a>、<a href="#Analysis" onclick="applepie(this.innerText)">奇異博士</a> ...</h7>
   <ul class="w3-ul w3-margin-top " id="myUL" style="display:none" >
 <script type="text/javascript">
@@ -119,18 +318,31 @@ function search() {
 
 
 <!-- Container (Analysis Section) -->
-<div id="Analysis" class="container-fluid text-center " style="margin-top: -10px">
+<div id="Analysis" class="container-fluid text-center " style="margin-top: -40px">
   <h1>Analysis</h1>
-  <h1 id="moviename" class=" w3-text-blue-grey " style="background-color:   #F5F5F5"></h1>
+  <h1 id="moviename" class=" w3-text-blue-grey " style="background-color:   #F5F5F5" ></h1>
+  <div id="english" class="" style="margin-top: -20px" ></div>
   <div> 
-  <div id="english" class="" style="margin-top: -10px "></div>
-   <div id="chart"></div>
-   <div id="imdb" ></div>
-   <div id="frequency"></div>
+   <div id="chart" style="display: inline-block; float: left; width: 40%"></div>
+   <div style="display: inline-block; float: right; width:50%" >
+       <div id="imdb" ></div>
+       <div id="frequency"></div>
+       <div id="imgs" style="display:none"></div>
+   </div>
+</div>
 
   <div id ="wordcloud">
   <script>
+   
+    $("#moviename").mouseover(function(){
+     $('#imgs').show();
+    })
+    $("#moviename").mouseout(function(){
+     $('#imgs').hide();
+    })
 
+
+   
     d3.csv("https://ndshen.github.io/test/project/cloud2.csv", 
       function(data)
       {
@@ -153,15 +365,14 @@ function applepie(title)
   d3.select("h2").remove();
   d3.select("h2").remove();
    d3.select("h2").remove();
+   d3.select("img").remove();
 // title放使用者輸入的電影名稱
 
   document.getElementById("moviename").innerHTML=title;
   document.getElementById("myUL").style="display:none";
-  document.getElementById("imdb").style="font-size:30px";
+  document.getElementById("imdb").style="font-size:20px";
   document.getElementById("frequency").style="font-size:30px ";
-  
-  document.getElementById("imdb").style="margin-top:-250px";
-  var width = 800, height = 350; 
+  var width = 400, height = 350; 
   var svg = d3.select("#chart").append("svg")
                   .attr("width", width)
                   .attr("height", height)
@@ -213,18 +424,7 @@ function applepie(title)
 
       }
     
-  d3.csv("https://ndshen.github.io/test/project/popularity3.csv", popular);
-  function popular(data){   
-    d3.select("#frequency").selectAll("div")
-      .data(data)
-      .enter()
-      .append("h2")
-      .text(function(d){return "Popularity in PTTMOVIEs: "+d[title];})
-      .style({
-        'color':'rgb(144, 173, 155)',
-        'margin-left':'400px',
-    });
-  }
+ 
   d3.csv("https://ndshen.github.io/test/project/rating3.csv", imdb);
   function imdb (data){
     d3.select("#imdb").selectAll("div")
@@ -234,10 +434,22 @@ function applepie(title)
       .text(function(d){return "IMDb Rating: "+d[title];})
       .style({
         'color':'rgb(144, 173, 115)',
-        'margin':'2px 0',
-        'background':'white',
-        'margin-left':'300px',
        
+      
+       
+        
+    });
+  }
+   d3.csv("https://ndshen.github.io/test/project/popularity3.csv", popular);
+  function popular(data){   
+    d3.select("#frequency").selectAll("div")
+      .data(data)
+      .enter()
+      .append("h2")
+      .text(function(d){return "Popularity in PTTMOVIEs: "+d[title];})
+      .style({
+        'color':'rgb(144, 173, 155)',
+        'font-size':'40px',
         
     });
   }
@@ -255,6 +467,17 @@ function applepie(title)
       
     });
   }
+  d3.csv("https://ndshen.github.io/test/project/img4.csv", imgs);
+  function imgs(data){   
+    console.log(title)
+    d3.select("#imgs").selectAll("div")
+      .data(data)
+      .enter()
+      .append("img")
+      .attr("src",function(d){return d[title];})
+  }
+
+
 }
   </script>
 
@@ -266,27 +489,23 @@ function applepie(title)
 
 
 
-  <h1 class="text-center" style=" margin-top: 100px">Popular movies</h1>
+  <h1 class="text-center" style=" margin-top: -40px">Popular movies</h1>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" >
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" role="listbox" >
 
-      <div class="item active">
-      <img src="http://1img.mgtv.com/preview/internettv/sp_images/ott/2016/dongman/292476/20160411105438321-new.jpg" class="img-circle"  width="500" height="400" style="margin-left: 30%" >
+      <div class="item active" >
+      <img src="http://1img.mgtv.com/preview/internettv/sp_images/ott/2016/dongman/292476/20160411105438321-new.jpg" class="img-circle"  width="500" height="400" style="margin-left: 26%" >
       <a href="#Analysis" onclick="applepie(this.innerText)" style="font-size: 30px"><strong>你的名字</strong></a>
       <p style="margin-top:20px">    </p>
   <br>
       </div>
 
       <div class="item" >
-       <img src="https://3.bp.blogspot.com/-q43hXQrhagI/V61YaWNmsQI/AAAAAAAAFJQ/xZBDGh1NIlsJ_WXdoRy76AxMSjCxNqozwCLcB/w1200-h630-p-nu/fantastic-beasts-ew-cover-450x600.jpg" class="img-circle"  width="340" height="400" style="margin-left: 36%">
+       <img src="https://3.bp.blogspot.com/-q43hXQrhagI/V61YaWNmsQI/AAAAAAAAFJQ/xZBDGh1NIlsJ_WXdoRy76AxMSjCxNqozwCLcB/w1200-h630-p-nu/fantastic-beasts-ew-cover-450x600.jpg" class="img-circle"  width="340" height="400" style="margin-left: 33%">
 
        <a href="#Analysis" onclick="applepie(this.innerText)" style="font-size: 30px"><strong>怪獸與牠們的產地</strong></a>
       <p style="margin-top:20px">    </p>
@@ -294,7 +513,7 @@ function applepie(title)
       </div>
 
       <div class="item" >
-       <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/ia17192HSYNnWhunflE0sFjmdaZLodhlA5oVwvyicIO3k0VkCIr7o8QWRSnV1ZWjfqiap0oDdbgED9KqvL6l9nf9Q/0?wx_fmt=jpeg" class="img-circle"  width="390" height="400" style="margin-left: 36%">
+       <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/ia17192HSYNnWhunflE0sFjmdaZLodhlA5oVwvyicIO3k0VkCIr7o8QWRSnV1ZWjfqiap0oDdbgED9KqvL6l9nf9Q/0?wx_fmt=jpeg" class="img-circle"  width="390" height="400" style="margin-left: 33%">
 
        <a href="#Analysis" onclick="applepie(this.innerText)" style="font-size: 30px"><strong>丹麥女孩</strong></a>
       <p style="margin-top:20px">    </p>
@@ -302,7 +521,7 @@ function applepie(title)
       </div>
 
 <div class="item" >
-       <img src="http://p2.cri.cn/M00/52/8C/CqgNOldQ50mABZF8AAAAAAAAAAA847.800x450.jpg" class="img-circle"  width="390" height="300" style="margin-left: 36%">
+       <img src="http://p2.cri.cn/M00/52/8C/CqgNOldQ50mABZF8AAAAAAAAAAA847.800x450.jpg" class="img-circle"  width="390" height="300" style="margin-left: 33%">
 
        <a href="#Analysis" onclick="applepie(this.innerText)" style="font-size: 30px"><strong>六弄咖啡館</strong></a>
       <p style="margin-top:20px">    </p>
@@ -310,7 +529,7 @@ function applepie(title)
       </div>
 
 <div class="item" >
-       <img src="http://image.cache.storm.mg/styles/smg-800xauto-er/s3/media/image/2016/08/26/20160826-051039_U4095_M190163_cffb.png?itok=TCEnaBV5" class="img-circle"  width="390" height="300" style="margin-left: 36%">
+       <img src="http://image.cache.storm.mg/styles/smg-800xauto-er/s3/media/image/2016/08/26/20160826-051039_U4095_M190163_cffb.png?itok=TCEnaBV5" class="img-circle"  width="390" height="300" style="margin-left: 33%">
 
        <a href="#Analysis" onclick="applepie(this.innerText)" style="font-size: 30px"><strong>如果這世界貓消失了</strong></a>
       <p style="margin-top:20px">    </p>
@@ -320,7 +539,7 @@ function applepie(title)
 
 
       <div class="item">
-          <img src="https://static1.squarespace.com/static/56a7b1eb69a91aab7988743c/t/580538cf20099e3d0e62b735/1476737236575/" class="img-circle"  width="450" height="300" style="margin-left: 33%">
+          <img src="https://static1.squarespace.com/static/56a7b1eb69a91aab7988743c/t/580538cf20099e3d0e62b735/1476737236575/" class="img-circle"  width="450" height="300" style="margin-left: 30%">
           <a href="#Analysis" onclick="applepie(this.innerText)" style="font-size: 30px"><strong>比利林恩的中場戰事</strong></a>
       <p style="margin-top:20px">    </p>
 <br>
@@ -344,7 +563,7 @@ function applepie(title)
 
 
 <!-- Container (websites Section) -->
-<div id="websites" class="container-fluid text-center bg-grey" style="margin-top: -50px">
+<div id="websites" class="container-fluid text-center bg-grey" style="margin-top: -100px">
   <h1>Related Website</h1><br>
   <h4></h4>
   <div class="row text-center slideanim">
@@ -383,7 +602,7 @@ function applepie(title)
 <div id="pricing" class="container-fluid" style="margin-top: -100px">
   <div class="text-center">
     <h1>Members</h1>
-    <h4>-five members in ninth gruop</h4>
+    <h4 style="margin-top: -20px">-five members in ninth gruop</h4>
   </div>
   <div class="row slideanim">
     <div class="col-sm-4 col-xs-12">
@@ -392,13 +611,14 @@ function applepie(title)
           <h1>羅良瑋</h1>
         </div>
         <div class="panel-body">
-          <p><strong>血型</strong> Ｏ</p>
+          <p><strong>來自</strong> 師大附中</p>
           <p><strong>星座</strong> 金牛座</p>
           <p><strong>系所 年級</strong> 資訊管理學系 二年級</p>
           <p><strong>興趣 </strong> 打排球 聽音樂 運動</p>
-          <p><strong>分工 </strong>網頁視覺設計與整合</p>
+          <p><strong>分工 </strong>網頁視覺設計& 網頁資料整合</p>
           <p><strong></strong> </p>
 
+<p><strong></strong> </p>
           <a href="https://www.facebook.com/peter.lo.1610?fref=ts"><img src="http://www.tiga.com.tw/HJO/fb.png" width="50" height="45" class="w3-hover-opacity"></a>
 
         </div>
@@ -461,7 +681,7 @@ function applepie(title)
         </div>
         <div class="panel-body">
           <p><strong>來自</strong> 台南女中</p>
-          <p><strong>系所 年級</strong> 會計學系 </p>
+          <p><strong>系所 年級</strong> 會計學系 三年級</p>
           <p><strong>興趣 </strong>肚皮舞</p>
           <p><strong>分工 </strong>D3圓餅圖繪製 & 團隊討論統整紀錄</p>
           <a href="https://www.facebook.com/profile.php?id=100000293426473&fref=ts"><img src="http://www.tiga.com.tw/HJO/fb.png" width="50" height="45" class="w3-hover-opacity"></a>
@@ -482,7 +702,6 @@ function applepie(title)
         </div>
         <div class="panel-body">
           <p><strong>專長</strong> 游泳</p>
-          <p><strong>台中人</strong></p>
           <p><strong>系所 年級</strong> 工商管理學系 二年級</p>
           <p> <strong>分工 </strong>文字雲製作 & 團隊專案報告簡介</p>
           <p><strong></strong> </p>
@@ -533,7 +752,7 @@ function applepie(title)
 <!-- Container (Contact Section) -->
 <div id = "video" class="container-fluid" style="margin-top: -100px">
 <h1><strong>  Video</strong></h1>
-<h3>Our video for crawling with R</h3>
+<h3 style="margin-top: -20px">Our video for crawling with R</h3>
  <iframe width="560" height="315" src="https://www.youtube.com/embed/4MiD_DPW5N4" frameborder="0" allowfullscreen></iframe>
 
 </div>
