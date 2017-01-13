@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,43 @@
   <script src="https://ndshen.github.io/test/project/cloudJS.js"></script>
 
         
-       <link href="http://presentation.creative-tim.com/assets/css/bootstrap.css" rel="stylesheet" />
-        <link href="http://presentation.creative-tim.com/assets/css/rubick_pres.css" rel="stylesheet"/>
+       <link href="https://ndshen.github.io/test/source/bootstrap332.css" rel="stylesheet" />
+        <link href="https://ndshen.github.io/test/source/rubick_press.css" rel="stylesheet"/>
         <!--     Fonts and icons     -->
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://ndshen.github.io/test/source/font-awesome.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
-        <link href="http://presentation.creative-tim.com/assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
-        <link href="http://presentation.creative-tim.com/assets/css/fonts/Rubik-Fonts.css" rel="stylesheet" />
+        <link href="https://ndshen.github.io/test/source/pre-icon.css" rel="stylesheet">
+        <link href="https://ndshen.github.io/test/source/rubick-font.css" rel="stylesheet" />
 
+        <!--statistics-->
+       
+        <link rel=stylesheet type="text/css" href="https://ndshen.github.io/test/analysis/scatcss.css">
+        
         <style>
+        .w3button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+         -webkit-transition-duration: 0.4s; /* Safari */
+         transition-duration: 0.4s;
+         cursor: pointer;
+        }
+        .w3button2 {
+          background-color: white; 
+          color: black; 
+          border: 2px solid #008CBA;
+        }
+
+        .w3button2:hover {
+          background-color: #008CBA;
+          color: white;
+        }
             .section-header .separator {
                 margin: 0em auto 2em;
             }
@@ -207,7 +237,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
  
-        <li><a href="#Analysis">ANALYSIS</a></li>
+        <li><a href="#myInput">ANALYSIS</a></li>
+        <li><a href="#statistics">STATISTICS</a></li>
         <li><a href="#websites">WEBSITES</a></li>
         <li><a href="#pricing">MEMBERS</a></li>
         <li><a href="#video">VIDEO</a></li>      
@@ -225,11 +256,11 @@
 <!--                     <img src="/assets/img/header6.jpg"/> -->
                     <div class="container">
                         <div class="content">
-                            <h1 >Movies</h1>
+                            <h1 style="color:black;">Movies</h1>
                             <div class="separator-container">
                                 <div class="separator line-separator">∎</div>
                             </div>
-                            <h5>"Every time I go to a movie, it's MAGIC, no matter what the movie's about"--Steven Speilberg</h5>
+                            <h5 style="color:black;">"Every time I go to a movie, it's MAGIC, no matter what the movie's about"--Steven Speilberg</h5>
                         </div>
                     </div>
                 </div>
@@ -318,31 +349,33 @@ function search() {
 
 
 <!-- Container (Analysis Section) -->
-<div id="Analysis" class="container-fluid text-center " style="margin-top: -40px">
+<div id="Analysis" class="container-fluid text-center ">
   <h1>Analysis</h1>
+<div id="hide" style="display: none; height:auto;">
   <h1 id="moviename" class=" w3-text-blue-grey " style="background-color:   #F5F5F5" ></h1>
   <div id="english" class="" style="margin-top: -20px" ></div>
-  <div> 
-   <div id="chart" style="display: inline-block; float: left; width: 40%"></div>
-   <div style="display: inline-block; float: right; width:50%" >
+  <div style="height:400px;"> 
+   <div id="chart" style="display: inline-block; float:left; width: 45%"></div>
+   <div style="display: inline-block; width:45% ; text-align:left;" >
        <div id="imdb" ></div>
        <div id="frequency"></div>
-       <div id="imgs" style="display:none"></div>
+       <div style="display: inline-block; width:100%; position:relative;">
+        <div id="imgs" style="float:left;"></div>
+        <div style="right:0px; bottom: 0px; position:absolute;">
+          <button onclick="showAgain()"; class="w3button w3button2">Cloud</button>
+        </div>
+       </div>
    </div>
+</div>
 </div>
 
   <div id ="wordcloud">
   <script>
-   
-    $("#moviename").mouseover(function(){
-     $('#imgs').show();
-    })
-    $("#moviename").mouseout(function(){
-     $('#imgs').hide();
-    })
-
-
-   
+  function showAgain(){
+      d3.select("#hide").style("display","none");
+      showCloud();
+  }
+  function showCloud(){
     d3.csv("https://ndshen.github.io/test/project/cloud2.csv", 
       function(data)
       {
@@ -353,19 +386,26 @@ function search() {
           .words(data)
           .start();
       });
-    </script></div>
+  }
+  showCloud();
+  </script>
+  </div>
    
-   </div>
+</div>
  
 
   <script type="text/javascript">
   
 function applepie(title)
-  { d3.select("svg").remove();
-  d3.select("h2").remove();
-  d3.select("h2").remove();
-   d3.select("h2").remove();
-   d3.select("img").remove();
+
+  {
+  d3.select("#hide").style("display", "block")
+  d3.select("#wordcloud").selectAll("svg").remove();
+  d3.select("#chart").selectAll("svg").remove();
+  d3.select("#english").selectAll("h2").remove();
+  d3.select("#imdb").selectAll("h2").remove();
+  d3.select("#frequency").selectAll("h2").remove();
+  d3.select("#imgs").selectAll("img").remove();
 // title放使用者輸入的電影名稱
 
   document.getElementById("moviename").innerHTML=title;
@@ -475,6 +515,7 @@ function applepie(title)
       .enter()
       .append("img")
       .attr("src",function(d){return d[title];})
+      
   }
 
 
@@ -487,11 +528,22 @@ function applepie(title)
 
 </div>
 
+  <div id="statistics" class="container-fluid text-center">
+    <h1>Statistics</h1>
+    <h2 class=" w3-text-blue-grey ">IMDB評分與PTT討論量 散布圖</h2>
+    <div id="mainChart">
+      <div id="scatTooltip" style="position:absolute; margin-left:15%; display:none" >
+        <h3 style="color:rgb(144, 173, 115); font-size:40px;"><span class="value">value</span></h3>
+      </div>
+          <!-- /the chart goes here -->
+    </div>
+        <script type="text/javascript" src="https://ndshen.github.io/test/analysis/scatterchart.js"></script>
+  </div>
 
-
-  <h1 class="text-center" style=" margin-top: -40px">Popular movies</h1>
+  
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" >
     <!-- Indicators -->
+    <h1 class="text-center" >Popular movies</h1>
     
 
     <!-- Wrapper for slides -->
