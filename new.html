@@ -305,7 +305,7 @@
 
 	<ul class="w3-ul w3-margin-top " id="myUL" style="display:none" >
 		<script type="text/javascript">
-  			d3.csv("https://ndshen.github.io/test/project/movieList6.csv", bigList);
+  			d3.csv("https://ndshen.github.io/MA_JS/project/movieList6.csv", bigList);
    			function bigList(data){   
    			d3.select("#myUL").selectAll("li")
      		.data(data)
@@ -380,7 +380,7 @@ function search() {
    		    showCloud();
   		}
   		function showCloud(){
-   			d3.csv("https://ndshen.github.io/test/project/cloud2.csv", 
+   			d3.csv("https://ndshen.github.io/MA_JS/project/cloud2.csv", 
      		function(data){
 				d3.wordcloud()
           		.size([800, 600])
@@ -466,7 +466,7 @@ function applepie(title)
     }
     
  
-  d3.csv("https://ndshen.github.io/test/project/rating3.csv", imdb);
+  d3.csv("https://ndshen.github.io/MA_JS/project/rating3.csv", imdb);
   function imdb (data){
     d3.select("#imdb").selectAll("div")
       .data(data)
@@ -478,7 +478,7 @@ function applepie(title)
     });
   }
 
-    d3.csv("https://ndshen.github.io/test/project/popularity3.csv", popular);
+    d3.csv("https://ndshen.github.io/MA_JS/project/popularity3.csv", popular);
     function popular(data){   
     d3.select("#frequency").selectAll("div")
       .data(data)
@@ -491,7 +491,7 @@ function applepie(title)
         
     });
   }
-  d3.csv("https://ndshen.github.io/test/project/englishName2.csv", english);
+  d3.csv("https://ndshen.github.io/MA_JS/project/englishName2.csv", english);
   function english(data){   
     d3.select("#english").selectAll("div")
       .data(data)
@@ -505,7 +505,7 @@ function applepie(title)
       
     });
   }
-  d3.csv("https://ndshen.github.io/test/project/img4.csv", imgs);
+  d3.csv("https://ndshen.github.io/MA_JS/project/img4.csv", imgs);
   function imgs(data){   
     console.log(title)
     d3.select("#imgs").selectAll("div")
@@ -535,7 +535,7 @@ function applepie(title)
    			 </div>
           <!-- /the chart goes here -->
     	</div>
-        <script type="text/javascript" src="https://ndshen.github.io/test/analysis/scatterchart.js"></script>
+        <script type="text/javascript" src="https://ndshen.github.io/MA_JS/analysis/scatterchart.js"></script>
 </div>
 
   
